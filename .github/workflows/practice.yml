@@ -25,12 +25,8 @@ jobs:
             run: npm install
             working-directory: "./frontend"
 
-          - name: Fix build
-            run: export NODE_OPTIONS=--openssl-legacy-provider
-            working-directory: "./frontend"
-
           - name: Build
-            run: npm run build
+            run: export NODE_OPTIONS=--openssl-legacy-provider npm run build
             working-directory: "./frontend"
 
           - name: Run test
